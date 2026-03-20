@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8" />
+  <title>Eid Salami Quiz App</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="phone-shell">
+    <section class="screen" id="startScreen">
+      <p class="badge">ঈদ স্পেশাল</p>
+      <h1>🎉 ঈদের চাঁদ আকাশে, সালামি জেতো কুইজ খেলে!</h1>
+      <p class="sub">তোমার সালামি তোমার হাতে! সুযোগ কিন্তু একবারই!</p>
+
+      <label for="username">আপনার নাম</label>
+      <input type="text" id="username" maxlength="30" placeholder="নাম লিখুন" autocomplete="off" />
+
+      <p class="pick-title">কুইজ সেট বেছে নিন</p>
+      <div class="set-grid">
+        <button class="set-btn" onclick="startQuiz('A')">
+          <span>সেট A</span>
+          <small>১০ প্রশ্ন • সর্বোচ্চ ৪০ টাকা</small>
+        </button>
+        <button class="set-btn" onclick="startQuiz('B')">
+          <span>সেট B</span>
+          <small>১৫ প্রশ্ন • সর্বোচ্চ ৫০ টাকা</small>
+        </button>
+        <button class="set-btn" onclick="startQuiz('C')">
+          <span>সেট C</span>
+          <small>২০ প্রশ্ন • সর্বোচ্চ ১০০ টাকা</small>
+        </button>
+      </div>
+
+      <div id="bestScore" class="best-score"></div>
+      <button class="secondary" onclick="downloadSalamiCard()">আপনার সালামি কার্ড ডাউনলোড করুন</button>
+      <div id="lockedNotice" class="locked hidden"></div>
+    </section>
+
+    <section class="screen hidden" id="loadingScreen">
+      <div class="loader-wrap">
+        <div class="loader"></div>
+        <p>কুইজ প্রস্তুত হচ্ছে...</p>
+      </div>
+    </section>
+
+    <section class="screen hidden" id="quizScreen">
+      <div class="status-row">
+        <div class="chip" id="progressText">প্রশ্ন ১/১০</div>
+        <div class="chip danger" id="timerText">সময়: ১০ সেকেন্ড</div>
+        <div class="chip success" id="earnedText">আয়: ০ টাকা</div>
+      </div>
+
+      <article class="card slide-in">
+        <h2 id="questionText"></h2>
+        <div id="options" class="options"></div>
+      </article>
+    </section>
+
+    <section class="screen hidden" id="resultScreen">
+      <article class="card result-card">
+        <h2 id="resultTitle"></h2>
+        <p id="resultMeta" class="result-meta"></p>
+        <p id="resultPercent" class="result-percent"></p>
+        <div class="share-preview" id="shareCardPreview">
+          <p class="preview-badge">Eid Salami Card</p>
+          <h3 id="shareCardName"></h3>
+          <p id="shareCardCorrect"></p>
+          <p id="shareCardTk" class="preview-tk"></p>
+        </div>
+        <button class="primary" onclick="shareResult()">ফলাফল শেয়ার করুন</button>
+        <button class="secondary" onclick="goHome()">হোমে ফিরে যান</button>
+      </article>
+    </section>
+  </main>
+
+  <div id="toast" class="toast hidden"></div>
+
+  <script src="questions.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
