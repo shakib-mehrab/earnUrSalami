@@ -64,7 +64,7 @@ function applyInAppRestrictions() {
     btn.disabled = true;
   });
 
-  notice.innerText = "Facebook/Messenger/WhatsApp in-app browser থেকে কুইজ বন্ধ আছে। একবারে সঠিকভাবে লক রাখতে Chrome/Safari-তে লিংক খুলে কুইজ দিন।";
+  notice.innerText = "In-app browser is not supported! Open In Browser.";
   notice.classList.remove("hidden");
   if (helperBtn) {
     helperBtn.classList.remove("hidden");
