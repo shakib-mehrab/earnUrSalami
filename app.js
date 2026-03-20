@@ -9,6 +9,7 @@ let answered = false;
 let timerId = null;
 let timeLeft = 10;
 let lastEarnedTk = 0;
+let blockedByInAppBrowser = false;
 
 const QUIZ_DONE_KEY = "eidSalamiQuizDone";
 const BEST_KEY = "eidSalamiBestTk";
@@ -26,6 +27,50 @@ const setConfig = {
   C: { count: 20, maxTk: 100 }
 };
 
+function isInAppBrowser() {
+  const ua = navigator.userAgent || "";
+  return /(FBAN|FBAV|Messenger|Instagram|WhatsApp|Line|wv)/i.test(ua);
+}
+
+function isMobileDevice() {
+  const ua = navigator.userAgent || "";
+  return /Android|iPhone|iPad|iPod/i.test(ua);
+}
+
+function isIosDevice() {
+  const ua = navigator.userAgent || "";
+  return /iPhone|iPad|iPod/i.test(ua);
+}
+
+function isAndroidDevice() {
+  const ua = navigator.userAgent || "";
+  return /Android/i.test(ua);
+}
+
+function applyInAppRestrictions() {
+  blockedByInAppBrowser = isInAppBrowser() && isMobileDevice();
+  const helperBtn = document.getElementById("openBrowserBtn");
+
+  if (!blockedByInAppBrowser) {
+    if (helperBtn) {
+      helperBtn.classList.add("hidden");
+    }
+    return;
+  }
+
+  const notice = document.getElementById("lockedNotice");
+  const setButtons = document.querySelectorAll(".set-btn");
+  setButtons.forEach((btn) => {
+    btn.disabled = true;
+  });
+
+  notice.innerText = "Facebook/Messenger/WhatsApp in-app browser থেকে কুইজ বন্ধ আছে। একবারে সঠিকভাবে লক রাখতে Chrome/Safari-তে লিংক খুলে কুইজ দিন।";
+  notice.classList.remove("hidden");
+  if (helperBtn) {
+    helperBtn.classList.remove("hidden");
+  }
+}
+
 function showScreen(id) {
   ["startScreen", "loadingScreen", "quizScreen", "resultScreen"].forEach((screenId) => {
     document.getElementById(screenId).classList.toggle("hidden", screenId !== id);
@@ -41,7 +86,9 @@ function lockIfCompleted() {
   const isDone = localStorage.getItem(QUIZ_DONE_KEY) === "true";
   const notice = document.getElementById("lockedNotice");
   if (!isDone) {
-    notice.classList.add("hidden");
+    if (!blockedByInAppBrowser) {
+      notice.classList.add("hidden");
+    }
     return;
   }
 
@@ -59,6 +106,11 @@ function isQuizLocked() {
 }
 
 function startQuiz(set) {
+  if (blockedByInAppBrowser) {
+    showToast("অনুগ্রহ করে Chrome/Safari-তে লিংক খুলে কুইজ দিন।");
+    return;
+  }
+
   if (isQuizLocked()) {
     showToast("এই ডিভাইসে কুইজ ইতিমধ্যে সম্পন্ন হয়েছে।");
     lockIfCompleted();
@@ -169,7 +221,13 @@ function selectAnswer(selected) {
 
   const q = currentQuestions[currentIndex];
   if (selected === q.answer) {
-    score += weights[q.difficulty];
+    const base = weights[q.difficulty];
+    if (selectedSet === "C") {
+      const speedFactor = Math.max(timeLeft, 1) / 10;
+      score += base * speedFactor;
+    } else {
+      score += base;
+    }
     correctCount += 1;
   }
 
@@ -303,7 +361,32 @@ async function downloadSalamiCard() {
 function goHome() {
   showScreen("startScreen");
   updateBestScore();
+  applyInAppRestrictions();
   lockIfCompleted();
+}
+
+async function openInBrowserHelper() {
+  const currentUrl = window.location.href;
+
+  if (isAndroidDevice()) {
+    const cleanUrl = currentUrl.replace(/^https?:\/\//i, "");
+    const scheme = window.location.protocol.replace(":", "") || "https";
+    const intentUrl = `intent://${cleanUrl}#Intent;scheme=${scheme};package=com.android.chrome;S.browser_fallback_url=${encodeURIComponent(currentUrl)};end`;
+    window.location.href = intentUrl;
+    return;
+  }
+
+  if (isIosDevice()) {
+    try {
+      await navigator.clipboard.writeText(currentUrl);
+      showToast("লিংক কপি হয়েছে। Share > Open in Safari চাপুন।");
+    } catch (error) {
+      showToast("Share > Open in Safari চাপুন।");
+    }
+    return;
+  }
+
+  window.open(currentUrl, "_blank", "noopener,noreferrer");
 }
 
 function drawRoundedRect(ctx, x, y, width, height, radius) {
@@ -428,6 +511,9 @@ async function createShareCardBlob(result) {
   ctx.fillStyle = "#9ca3af";
   ctx.font = "500 34px 'Hind Siliguri', sans-serif";
   ctx.fillText("🌙 আপনার ঈদ ভালো কাটুক! সবার সাথে আনন্দে কাটূক! 🌙", 540, 1020);
+  ctx.fillStyle = "#d4d4d4";
+  ctx.font = "600 32px 'Hind Siliguri', sans-serif";
+  ctx.fillText("শুভেচ্ছান্তেঃ মেহরাব হোসেন", 540, 1110);
 
   return new Promise((resolve) => {
     canvas.toBlob((blob) => resolve(blob), "image/png");
@@ -443,3 +529,4 @@ function showToast(message) {
 
 updateBestScore();
 lockIfCompleted();
+applyInAppRestrictions();

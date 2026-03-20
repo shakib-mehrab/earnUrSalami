@@ -177,6 +177,13 @@ button:disabled {
   color: #fca5a5;
 }
 
+.app-footer {
+  margin-top: 14px;
+  text-align: center;
+  color: #d4d4d4;
+  font-weight: 600;
+}
+
 .status-row {
   display: grid;
   grid-template-columns: 1fr;
@@ -267,6 +274,13 @@ button:disabled {
   border: 1px solid #454545;
 }
 
+#openBrowserBtn {
+  margin-top: 12px;
+  border-color: #7c5210;
+  background: linear-gradient(120deg, #5c3b00, #3f2a00);
+  color: #ffd890;
+}
+
 .share-preview {
   margin-top: 14px;
   padding: 14px;
@@ -303,6 +317,12 @@ button:disabled {
   color: #fde68a !important;
   font-weight: 700;
   font-size: 1.05rem;
+}
+
+.share-footer {
+  margin-top: 10px !important;
+  color: #f3d490 !important;
+  font-weight: 600;
 }
 
 .loader-wrap {

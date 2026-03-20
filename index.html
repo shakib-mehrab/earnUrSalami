@@ -38,6 +38,8 @@
       <div id="bestScore" class="best-score"></div>
       <button class="secondary" onclick="downloadSalamiCard()">আপনার সালামি কার্ড ডাউনলোড করুন</button>
       <div id="lockedNotice" class="locked hidden"></div>
+      <button id="openBrowserBtn" class="secondary hidden" type="button" onclick="openInBrowserHelper()">Open in Browser</button>
+      <p class="app-footer">শুভেচ্ছান্তেঃ মেহরাব হোসেন</p>
     </section>
 
     <section class="screen hidden" id="loadingScreen">
@@ -70,6 +72,7 @@
           <h3 id="shareCardName"></h3>
           <p id="shareCardCorrect"></p>
           <p id="shareCardTk" class="preview-tk"></p>
+          <p class="share-footer">শুভেচ্ছান্তেঃ মেহরাব হোসেন</p>
         </div>
         <button class="primary" onclick="shareResult()">ফলাফল শেয়ার করুন</button>
         <button class="secondary" onclick="goHome()">হোমে ফিরে যান</button>
