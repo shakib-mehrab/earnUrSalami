@@ -367,7 +367,7 @@ async function createShareCardBlob(result) {
       // If fonts are not ready, fall back to available fonts.
     }
   }
-
+//deployment comment
   const bg = ctx.createLinearGradient(0, 0, 1080, 1350);
   bg.addColorStop(0, "#0f0f0f");
   bg.addColorStop(1, "#1b1b1b");
