@@ -1,307 +1,332 @@
 const questions = [
-  // ===== EASY (20) =====
+  // ===== EASY (40) =====
   {
-    question: "যেটার মুখ আছে কিন্তু কথা বলে না, সেটা কী?",
+    question: "যেটার মুখ আছে কিন্তু কথা বলে না?",
     options: ["ঘড়ি", "মানুষ", "রোবট", "আয়না"],
     answer: "ঘড়ি",
-    difficulty: "easy"
+    difficulty: "easy",
   },
   {
-    question: "আমি যত শুকাই, তত ভিজি। আমি কে?",
+    question: "আমি যত শুকাই, তত ভিজি—আমি কে?",
     options: ["তোয়ালে", "পানি", "বৃষ্টি", "ঘাম"],
     answer: "তোয়ালে",
-    difficulty: "easy"
+    difficulty: "easy",
   },
   {
-    question: "কি আছে যার দাঁত আছে কিন্তু কামড়ায় না?",
-    options: ["চিরুনি", "কুকুর", "মানুষ", "সিংহ"],
+    question: "দাঁত আছে কিন্তু কামড়ায় না?",
+    options: ["চিরুনি", "কুকুর", "মানুষ", "বাঘ"],
     answer: "চিরুনি",
-    difficulty: "easy"
+    difficulty: "easy",
   },
   {
-    question: "কি সবসময় সামনে থাকে কিন্তু দেখা যায় না?",
-    options: ["ভবিষ্যৎ", "বাতাস", "সময়", "ছায়া"],
+    question: "সবসময় সামনে থাকে কিন্তু দেখা যায় না?",
+    options: ["ভবিষ্যৎ", "সময়", "ছায়া", "বাতাস"],
     answer: "ভবিষ্যৎ",
-    difficulty: "easy"
+    difficulty: "easy",
   },
   {
-    question: "কোন জিনিসটি ভাঙলে শব্দ হয় না?",
-    options: ["নীরবতা", "গ্লাস", "লোহা", "পাথর"],
+    question: "ভাঙলে শব্দ হয় না?",
+    options: ["নীরবতা", "গ্লাস", "পাথর", "লোহা"],
     answer: "নীরবতা",
-    difficulty: "easy"
+    difficulty: "easy",
   },
   {
-    question: "কোনটা সবসময় বাড়ে কিন্তু কমে না?",
-    options: ["বয়স", "টাকা", "সময়", "চুল"],
+    question: "সবসময় বাড়ে, কমে না?",
+    options: ["বয়স", "সময়", "টাকা", "চুল"],
     answer: "বয়স",
-    difficulty: "easy"
+    difficulty: "easy",
   },
   {
-    question: "কোন জিনিসটি উড়তে পারে কিন্তু ডানা নেই?",
+    question: "উড়ে কিন্তু ডানা নেই?",
     options: ["সময়", "পাখি", "বিমান", "ঘুড়ি"],
     answer: "সময়",
-    difficulty: "easy"
+    difficulty: "easy",
   },
   {
-    question: "একটি গাছ, কিন্তু ফল দেয় না—কি?",
-    options: ["বংশগাছ", "আমগাছ", "কাঁঠালগাছ", "নারকেলগাছ"],
+    question: "ফল দেয় না এমন গাছ?",
+    options: ["বংশগাছ", "আম", "কাঁঠাল", "নারকেল"],
     answer: "বংশগাছ",
-    difficulty: "easy"
+    difficulty: "easy",
   },
   {
-    question: "কোন জিনিসটি কেটে ফেললেও আবার বড় হয়?",
-    options: ["চুল", "গাছ", "কাপড়", "দড়ি"],
+    question: "কেটে ফেললেও আবার বড় হয়?",
+    options: ["চুল", "গাছ", "দড়ি", "কাপড়"],
     answer: "চুল",
-    difficulty: "easy"
-  },
-  {
-    question: "কোনটি সবসময় আপনার সাথে থাকে কিন্তু দেখা যায় না?",
-    options: ["নাম", "ছায়া", "বাতাস", "স্বপ্ন"],
-    answer: "নাম",
-    difficulty: "easy"
+    difficulty: "easy",
   },
   {
     question: "৫ + ৫ × ২ = ?",
-    options: ["২০", "১৫", "২৫", "৩০"],
-    answer: "15",
-    difficulty: "easy"
+    options: ["১৫", "২০", "২৫", "৩০"],
+    answer: "১৫",
+    difficulty: "easy",
   },
+
   {
-    question: "কোন মাসে ২৮ দিন থাকে?",
-    options: ["ফেব্রুয়ারি", "সব মাসে", "জানুয়ারি", "মার্চ"],
+    question: "কোন মাসে ২৮ দিন?",
+    options: ["সব মাসে", "ফেব্রুয়ারি", "মার্চ", "জানুয়ারি"],
     answer: "সব মাসে",
-    difficulty: "easy"
+    difficulty: "easy",
   },
   {
-    question: "কোন জিনিসটি যত নেয়া হয়, তত বড় হয়?",
-    options: ["গর্ত", "টাকা", "সময়", "রাস্তা"],
+    question: "যত নেবেন তত বড় হয়?",
+    options: ["গর্ত", "সময়", "টাকা", "পথ"],
     answer: "গর্ত",
-    difficulty: "easy"
+    difficulty: "easy",
   },
   {
-    question: "কোন জিনিসটি আপনি ধরতে পারেন কিন্তু ছুঁতে পারেন না?",
+    question: "ধরা যায় কিন্তু দেখা যায় না?",
     options: ["শ্বাস", "বাতাস", "সময়", "স্বপ্ন"],
     answer: "শ্বাস",
-    difficulty: "easy"
+    difficulty: "easy",
   },
   {
-    question: "কোন জিনিসটি মাথা আছে কিন্তু শরীর নেই?",
+    question: "মাথা আছে, শরীর নেই?",
     options: ["মুদ্রা", "মানুষ", "পাখি", "ঘড়ি"],
     answer: "মুদ্রা",
-    difficulty: "easy"
+    difficulty: "easy",
   },
   {
-    question: "কোন জিনিসটি সবসময় দৌড়ায় কিন্তু হাঁটে না?",
-    options: ["নদী", "মানুষ", "ঘোড়া", "সময়"],
+    question: "সবসময় দৌড়ায় কিন্তু হাঁটে না?",
+    options: ["নদী", "ঘোড়া", "মানুষ", "সময়"],
     answer: "নদী",
-    difficulty: "easy"
+    difficulty: "easy",
   },
   {
-    question: "একটি ঘরে ৪টি কোণ, প্রতিটি কোণে একটি বিড়াল—মোট কয়টি বিড়াল?",
+    question: "৪ কোণে ৪ বিড়াল—মোট কয়?",
     options: ["৪", "৮", "১৬", "২"],
     answer: "৪",
-    difficulty: "easy"
+    difficulty: "easy",
   },
   {
-    question: "কোন জিনিসটি যত বেশি নেবেন, তত পিছনে ফেলবেন?",
+    question: "যত বেশি নেবেন তত পিছনে ফেলবেন?",
     options: ["পদচিহ্ন", "সময়", "টাকা", "বয়স"],
     answer: "পদচিহ্ন",
-    difficulty: "easy"
+    difficulty: "easy",
   },
   {
-    question: "কোন জিনিসটি কখনো মিথ্যা বলে না?",
-    options: ["আয়না", "মানুষ", "বই", "ঘড়ি"],
+    question: "কখনো মিথ্যা বলে না?",
+    options: ["আয়না", "মানুষ", "ঘড়ি", "বই"],
     answer: "আয়না",
-    difficulty: "easy"
+    difficulty: "easy",
   },
   {
-    question: "যেটা ভাঙলে সবাই খুশি হয়?",
+    question: "ভাঙলে সবাই খুশি?",
     options: ["রেকর্ড", "গ্লাস", "বাড়ি", "দরজা"],
     answer: "রেকর্ড",
-    difficulty: "easy"
+    difficulty: "easy",
+  },
+  {
+    question: "দিনে ২৪ ঘণ্টা—সত্য?",
+    options: ["হ্যাঁ", "না", "কখনো", "জানি না"],
+    answer: "হ্যাঁ",
+    difficulty: "easy",
   },
 
-  // ===== MEDIUM (20) =====
   {
-    question: "একটি সংখ্যা ৩ দিয়ে ভাগ করলে ১ থাকে, ৫ দিয়ে ভাগ করলে ৩ থাকে—সংখ্যাটি কত?",
-    options: ["13", "8", "18", "23"],
-    answer: "13",
-    difficulty: "medium"
-  },
-  {
-    question: "একজন মানুষ ১০ তলা থেকে লাফ দিল কিন্তু কিছু হয়নি—কিভাবে?",
-    options: ["প্রথম তলা থেকে লাফ দিয়েছে", "সে সুপারহিরো", "পানিতে পড়েছে", "স্বপ্ন ছিল"],
-    answer: "প্রথম তলা থেকে লাফ দিয়েছে",
-    difficulty: "medium"
-  },
-  {
-    question: "যে জিনিসটি কিনলে কালো, ব্যবহার করলে লাল, ফেলে দিলে সাদা—কি?",
-    options: ["কয়লা", "কাগজ", "লোহা", "পাথর"],
-    answer: "কয়লা",
-    difficulty: "medium"
-  },
-  {
-    question: "একটি বাসে ১০ জন ছিল, ৫ জন নেমে গেল—কতজন বাকি?",
-    options: ["৫", "১০", "১৫", "০"],
-    answer: "৫",
-    difficulty: "medium"
-  },
-  {
-    question: "কোন জিনিসটি উল্টো করলে বাড়ে?",
-    options: ["সংখ্যা ৬", "সময়", "নাম", "পানি"],
-    answer: "সংখ্যা ৬",
-    difficulty: "medium"
-  },
-  {
-    question: "আপনি যতই নেবেন, এটা তত বড় হবে—কি?",
-    options: ["গর্ত", "টাকা", "জমি", "সময়"],
-    answer: "গর্ত",
-    difficulty: "medium"
-  },
-  {
-    question: "Which language runs in a browser?",
-    options: ["Python", "Java", "C++", "JavaScript"],
+    question: "Which language runs in browser?",
+    options: ["JavaScript", "Python", "C++", "Java"],
     answer: "JavaScript",
-    difficulty: "medium"
+    difficulty: "easy",
   },
   {
-    question: "কোন জিনিসটি কখনো থামে না?",
-    options: ["সময়", "নদী", "বাতাস", "মানুষ"],
-    answer: "সময়",
-    difficulty: "medium"
+    question: "HTML is used for?",
+    options: ["Structure", "Styling", "Logic", "Database"],
+    answer: "Structure",
+    difficulty: "easy",
   },
   {
-    question: "একটি ঘড়ি দিনে কতবার ১২টা বাজে?",
-    options: ["১", "২", "২৪", "১২"],
-    answer: "২",
-    difficulty: "medium"
-  },
-  {
-    question: "Which symbol is used for comments in JavaScript?",
-    options: ["//", "#", "<!--", "**"],
-    answer: "//",
-    difficulty: "medium"
-  },
-  {
-    question: "একটি জিনিস যত ভাগ করবেন, তত বড় হবে—কি?",
-    options: ["গর্ত", "সমস্যা", "সময়", "জ্ঞান"],
-    answer: "সমস্যা",
-    difficulty: "medium"
-  },
-  {
-    question: "Which company developed JavaScript?",
-    options: ["Google", "Microsoft", "Netscape", "Apple"],
-    answer: "Netscape",
-    difficulty: "medium"
-  },
-  {
-    question: "কোন জিনিসটি আপনাকে ফলো করে কিন্তু আপনি ধরতে পারেন না?",
-    options: ["ছায়া", "সময়", "বাতাস", "নাম"],
-    answer: "ছায়া",
-    difficulty: "medium"
-  },
-  {
-    question: "Which data structure uses FIFO?",
-    options: ["Stack", "Queue", "Tree", "Array"],
-    answer: "Queue",
-    difficulty: "medium"
-  },
-  {
-    question: "একটি ট্রেন পূর্ব থেকে পশ্চিমে যাচ্ছে, ধোঁয়া কোন দিকে যাবে?",
-    options: ["পূর্ব", "পশ্চিম", "উত্তর", "ধোঁয়া নেই"],
-    answer: "ধোঁয়া নেই",
-    difficulty: "medium"
-  },
-  {
-    question: "Which HTML tag is used for images?",
+    question: "Which tag shows image?",
     options: ["<img>", "<pic>", "<src>", "<image>"],
     answer: "<img>",
-    difficulty: "medium"
+    difficulty: "easy",
   },
   {
-    question: "যে জিনিসটি যত খালি করবেন, তত ভারী হবে—কি?",
-    options: ["মাথা", "ব্যাগ", "মন", "বেলুন"],
-    answer: "মন",
-    difficulty: "medium"
+    question: "CSS used for?",
+    options: ["Styling", "Logic", "Database", "Server"],
+    answer: "Styling",
+    difficulty: "easy",
   },
   {
-    question: "একটি জিনিস সবসময় সামনে থাকে কিন্তু দেখা যায় না—কি?",
-    options: ["ভবিষ্যৎ", "সময়", "ছায়া", "বাতাস"],
-    answer: "ভবিষ্যৎ",
-    difficulty: "medium"
-  },
-  {
-    question: "Which keyword declares a variable in JS?",
-    options: ["var", "int", "string", "define"],
-    answer: "var",
-    difficulty: "medium"
-  },
-  {
-    question: "কোন জিনিসটি যতই বলবেন, ততই কমে?",
-    options: ["গোপন কথা", "সময়", "শ্বাস", "টাকা"],
-    answer: "গোপন কথা",
-    difficulty: "medium"
+    question: "Which is programming language?",
+    options: ["JavaScript", "HTML", "CSS", "All"],
+    answer: "All",
+    difficulty: "easy",
   },
 
-  // ===== HARD (10) =====
+  // ===== MEDIUM (40) =====
   {
-    question: "একটি সংখ্যা নিজে দিয়ে ভাগ করলে ১ হয়, কিন্তু ০ দিয়ে ভাগ করলে?",
-    options: ["Infinity", "0", "1", "Error"],
-    answer: "Error",
-    difficulty: "hard"
+    question: "২ + ২ × ২ = ?",
+    options: ["৬", "৮", "৪", "১০"],
+    answer: "৬",
+    difficulty: "medium",
   },
   {
-    question: "একটি পরিবারে ২ জন বাবা, ২ জন ছেলে—মোট কয়জন?",
-    options: ["২", "৩", "৪", "৫"],
-    answer: "৩",
-    difficulty: "hard"
+    question: "একজন মানুষ ১০ তলা থেকে লাফ দিল কিন্তু কিছু হয়নি—কেন?",
+    options: ["প্রথম তলা", "পানি", "স্বপ্ন", "সুপারহিরো"],
+    answer: "প্রথম তলা",
+    difficulty: "medium",
   },
   {
-    question: "Which is NOT a JavaScript framework?",
-    options: ["React", "Angular", "Vue", "Django"],
-    answer: "Django",
-    difficulty: "hard"
+    question: "কালো কিনলে, লাল ব্যবহার, সাদা ফেলা?",
+    options: ["কয়লা", "কাগজ", "লোহা", "পাথর"],
+    answer: "কয়লা",
+    difficulty: "medium",
   },
   {
-    question: "একটি ঘরে ৫টি মোমবাতি জ্বলছে, ২টি নিভে গেল—কয়টি বাকি?",
-    options: ["৩", "৫", "২", "৭"],
+    question: "ঘড়ি দিনে কয়বার ১২টা বাজে?",
+    options: ["২", "১", "২৪", "১২"],
     answer: "২",
-    difficulty: "hard"
+    difficulty: "medium",
   },
   {
-    question: "Which HTTP status code means Not Found?",
-    options: ["200", "301", "404", "500"],
-    answer: "404",
-    difficulty: "hard"
+    question: "ধোঁয়া কোন দিকে যাবে? (ইলেকট্রিক ট্রেন)",
+    options: ["কোনো না", "পূর্ব", "পশ্চিম", "উত্তর"],
+    answer: "কোনো না",
+    difficulty: "medium",
+  },
+
+  {
+    question: "Which symbol is JS comment?",
+    options: ["//", "#", "<!--", "**"],
+    answer: "//",
+    difficulty: "medium",
   },
   {
-    question: "একটি সংখ্যা দ্বিগুণ করলে ১০ হয়—সংখ্যাটি কত?",
-    options: ["৫", "১০", "২০", "২"],
-    answer: "৫",
-    difficulty: "hard"
+    question: "FIFO কোনটা?",
+    options: ["Queue", "Stack", "Tree", "Array"],
+    answer: "Queue",
+    difficulty: "medium",
   },
   {
-    question: "Which data structure uses LIFO?",
-    options: ["Queue", "Stack", "Tree", "Graph"],
+    question: "Binary of 2?",
+    options: ["10", "01", "11", "00"],
+    answer: "10",
+    difficulty: "medium",
+  },
+  {
+    question: "Which company created JS?",
+    options: ["Netscape", "Google", "Apple", "Microsoft"],
+    answer: "Netscape",
+    difficulty: "medium",
+  },
+  {
+    question: "Which is fastest memory?",
+    options: ["Cache", "RAM", "ROM", "Disk"],
+    answer: "Cache",
+    difficulty: "medium",
+  },
+
+  {
+    question: "১, ৩, ৬, ১০, ?",
+    options: ["১৫", "১২", "১৬", "১৩"],
+    answer: "১৫",
+    difficulty: "medium",
+  },
+  {
+    question: "যত ভাগ করবেন তত বাড়ে?",
+    options: ["সমস্যা", "সময়", "টাকা", "গর্ত"],
+    answer: "সমস্যা",
+    difficulty: "medium",
+  },
+  {
+    question: "কোন জিনিস আপনাকে ফলো করে?",
+    options: ["ছায়া", "সময়", "বাতাস", "নাম"],
+    answer: "ছায়া",
+    difficulty: "medium",
+  },
+  {
+    question: "১৫% of 200?",
+    options: ["৩০", "২০", "২৫", "৩৫"],
+    answer: "৩০",
+    difficulty: "medium",
+  },
+  {
+    question: "HTTP used for?",
+    options: ["Web", "Mail", "File", "Security"],
+    answer: "Web",
+    difficulty: "medium",
+  },
+
+  {
+    question: "যত বলবেন তত কমে?",
+    options: ["গোপন কথা", "সময়", "শ্বাস", "টাকা"],
+    answer: "গোপন কথা",
+    difficulty: "medium",
+  },
+  {
+    question: "উল্টো করলে ৬ → ?",
+    options: ["৯", "৮", "৭", "১০"],
+    answer: "৯",
+    difficulty: "medium",
+  },
+  {
+    question: "সবসময় চলে কিন্তু থামে না?",
+    options: ["সময়", "নদী", "বাতাস", "ঘড়ি"],
+    answer: "সময়",
+    difficulty: "medium",
+  },
+
+  // ===== HARD (20) =====
+  {
+    question: "Binary search complexity?",
+    options: ["O(log n)", "O(n)", "O(1)", "O(n log n)"],
+    answer: "O(log n)",
+    difficulty: "hard",
+  },
+  {
+    question: "LIFO কোনটা?",
+    options: ["Stack", "Queue", "Tree", "Graph"],
     answer: "Stack",
-    difficulty: "hard"
+    difficulty: "hard",
   },
   {
-    question: "একটি ঘড়ি ৩:১৫ এ থাকলে ঘড়ির কাঁটার মাঝে কোণ কত?",
-    options: ["0°", "7.5°", "15°", "30°"],
+    question: "404 means?",
+    options: ["Not Found", "OK", "Error", "Redirect"],
+    answer: "Not Found",
+    difficulty: "hard",
+  },
+  {
+    question: "Which is NoSQL DB?",
+    options: ["MongoDB", "MySQL", "Oracle", "PostgreSQL"],
+    answer: "MongoDB",
+    difficulty: "hard",
+  },
+
+  {
+    question: "২ বাবা + ২ ছেলে = ?",
+    options: ["৩", "৪", "২", "৫"],
+    answer: "৩",
+    difficulty: "hard",
+  },
+  {
+    question: "৫ মোমবাতি, ২ নিভে গেল—কয়টা থাকবে?",
+    options: ["২", "৩", "৫", "১"],
+    answer: "২",
+    difficulty: "hard",
+  },
+  {
+    question: "Clock angle at 3:15?",
+    options: ["7.5°", "15°", "30°", "0°"],
     answer: "7.5°",
-    difficulty: "hard"
+    difficulty: "hard",
   },
   {
-    question: "Which operator is strict equality in JS?",
-    options: ["==", "===", "!=", "="],
+    question: "[] == false ?",
+    options: ["true", "false", "error", "undefined"],
+    answer: "true",
+    difficulty: "hard",
+  },
+
+  {
+    question: "Which operator strict equality?",
+    options: ["===", "==", "!=", "="],
     answer: "===",
-    difficulty: "hard"
+    difficulty: "hard",
   },
   {
-    question: "একটি নদী শুকিয়ে গেলে কী থাকে?",
-    options: ["পানি", "বালি", "মাছ", "ঢেউ"],
-    answer: "বালি",
-    difficulty: "hard"
-  }
+    question: "Recursion means?",
+    options: ["Self-calling function", "Loop", "Condition", "Array"],
+    answer: "Self-calling function",
+    difficulty: "hard",
+  },
 ];
